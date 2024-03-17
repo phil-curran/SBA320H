@@ -13,7 +13,13 @@ const Hourly = ({ hours }) => {
       bg={"white"}
       padding={1}
     >
-      <Flex justify={"center"} align={"center"} padding={2} color={"black"}>
+      <Flex
+        justify={"center"}
+        align={"center"}
+        padding={2}
+        color={"white"}
+        backgroundColor={"#2f3640"}
+      >
         <Box as="span" flex="1" textAlign="center">
           Time
         </Box>
@@ -30,7 +36,7 @@ const Hourly = ({ hours }) => {
           Wind
         </Box>
       </Flex>
-      <Accordion defaultIndex={[0]} allowMultiple color={"black"}>
+      <Accordion defaultIndex={[0]} allowToggle color={"black"}>
         {hours.map((hour, index) => (
           <AccItem key={index} hour={hour} />
         ))}

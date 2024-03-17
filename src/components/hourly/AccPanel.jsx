@@ -18,7 +18,14 @@ const AccPanel = ({ hour }) => {
   const { clouds, feels_like, humidity, pop, uvi, wind_deg, wind_speed } = hour;
 
   return (
-    <AccordionPanel padding={4} border={"1px solid #7f8c8d"} borderRadius={4}>
+    <AccordionPanel
+      padding={4}
+      border={"1px solid #7f8c8d"}
+      borderTopLeftRadius={0}
+      borderTopRightRadius={0}
+      borderBottomRightRadius={8}
+      borderBottomLeftRadius={8}
+    >
       <HStack>
         <Box as="span" flex="1" textAlign={"center"}>
           <Flex

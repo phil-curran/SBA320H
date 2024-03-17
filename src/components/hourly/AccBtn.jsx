@@ -41,7 +41,12 @@ const AccBtn = ({ hour }) => {
   const { minutes, phase } = time;
 
   return (
-    <AccordionButton height={36}>
+    <AccordionButton
+      borderTopLeftRadius={8}
+      borderTopRightRadius={8}
+      height={24}
+      _expanded={{ bg: "#404857", color: "white" }}
+    >
       <Box as="span" flex="1" textAlign="center" width={"25%"}>
         {`${time.hour}:${minutes} ${phase}`}
       </Box>
@@ -71,7 +76,7 @@ const AccBtn = ({ hour }) => {
           justifyContent={"space-evenly"}
         >
           <WindIcon />
-          NNE 5 mph
+          {wind_deg}° @ {wind_speed} mph
         </Flex>
       </Box>
       <AccordionIcon />
