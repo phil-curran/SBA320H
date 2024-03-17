@@ -12,12 +12,15 @@ const TabNav = () => {
     <Container maxW="960px">
       <Tabs isFitted>
         <TabList>
-          <Tab>Hourly</Tab>
+          <Tab color={"#fff"}>Now</Tab>
           <Tab>Today</Tab>
+          <Tab color={"#1abc9c"}>Hourly</Tab>
           <Tab>10 Day</Tab>
         </TabList>
-
         <TabPanels>
+          <TabPanel>
+            <p>one!</p>
+          </TabPanel>
           <TabPanel>
             <p>one!</p>
           </TabPanel>

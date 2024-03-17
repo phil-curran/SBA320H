@@ -1,0 +1,44 @@
+{
+  "daily": [
+    {
+      "dt": 1710644400,
+      "sunrise": 1710626392,
+      "sunset": 1710669496,
+      "moonrise": 1710638820,
+      "moonset": 1710611640,
+      "moon_phase": 0.25,
+      "summary": "Expect a day of partly cloudy with clear spells",
+      "temp": {
+        "day": 273.01,
+        "min": 259.57,
+        "max": 273.75,
+        "night": 263.01,
+        "eve": 271.88,
+        "morn": 259.85
+      },
+      "feels_like": {
+        "day": 269.39,
+        "night": 256.79,
+        "eve": 266.34,
+        "morn": 254.33
+      },
+      "pressure": 1021,
+      "humidity": 48,
+      "dew_point": 264.39,
+      "wind_speed": 6.16,
+      "wind_deg": 305,
+      "wind_gust": 11.32,
+      "weather": [
+        {
+          "id": 803,
+          "main": "Clouds",
+          "description": "broken clouds",
+          "icon": "04d"
+        }
+      ],
+      "clouds": 53,
+      "pop": 0.62,
+      "uvi": 2.26
+    }
+  ]
+}

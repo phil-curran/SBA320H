@@ -5,7 +5,6 @@ import { IconButton } from "@chakra-ui/react";
 import { SettingsIcon } from "@chakra-ui/icons";
 
 // componets
-import DrawerExample from "./components/DrawerExample";
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import Body from "./components/Body";
@@ -17,7 +16,6 @@ function App() {
       <Navbar />
       <TabNav />
       <Body />
-      {/* <IconButton aria-label="Search database" icon={<SettingsIcon />} /> */}
     </div>
   );
 }
