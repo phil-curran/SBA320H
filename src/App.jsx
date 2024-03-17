@@ -1,21 +1,38 @@
 /* eslint-disable no-unused-vars */
+import { useEffect, useState } from "react";
 import "./App.css";
 
-import { IconButton } from "@chakra-ui/react";
-import { SettingsIcon } from "@chakra-ui/icons";
-
-// componets
-import Header from "./components/Header";
+// components
 import Navbar from "./components/Navbar";
-import Body from "./components/Body";
 import TabNav from "./components/TabNav";
 
+// data
+import { getWeatherData } from "./utilities/getWeatherData";
+
 function App() {
+  const [weatherData, setWeatherData] = useState(null);
+  const [dataLoaded, setDataLoaded] = useState(false);
+  const [location, setLocation] = useState("New York");
+
+  useEffect(() => {
+    const fetchWeatherData = async () => {
+      setDataLoaded(false);
+      try {
+        const data = await getWeatherData(location);
+        setWeatherData(data);
+      } catch (error) {
+        console.log("Error: ", error.msg);
+      } finally {
+        setDataLoaded(true);
+      }
+    };
+    fetchWeatherData();
+  }, [location]);
+
   return (
     <div>
       <Navbar />
-      <TabNav />
-      <Body />
+      {dataLoaded && <TabNav weatherData={weatherData} />}
     </div>
   );
 }

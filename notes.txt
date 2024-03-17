@@ -1,0 +1,8 @@
+json response:
+
+data {} = current
+data.daily [] = daily
+data.hourly [] = hourly
+lat
+lon
+minutely

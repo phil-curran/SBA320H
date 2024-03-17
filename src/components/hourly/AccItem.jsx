@@ -1,15 +1,16 @@
+/* eslint-disable react/prop-types */
 import { AccordionItem } from "@chakra-ui/react";
 
 import AccBtn from "./AccBtn";
 import AccPanel from "./AccPanel";
 
-const AccItem = () => {
+const AccItem = ({ hour }) => {
   return (
     <AccordionItem padding={1}>
       <h2>
-        <AccBtn data={"data"} />
+        <AccBtn hour={hour} />
       </h2>
-      <AccPanel />
+      <AccPanel hour={hour} />
     </AccordionItem>
   );
 };

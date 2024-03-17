@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import {
   Box,
@@ -5,35 +6,71 @@ import {
   AccordionIcon,
   Image,
   Flex,
+  Divider,
 } from "@chakra-ui/react";
 
-const AccBtn = () => {
+// utilities
+import timeConverter from "../../utilities/timeConverter";
+import tempConverter from "../../utilities/tempConverter";
+
+// layout
+import VLineBreak from "../layout/Divider";
+
+// imgs
+import WindIcon from "../../assets/WindIcon";
+
+const AccBtn = ({ hour }) => {
+  const {
+    clouds,
+    dew_point,
+    dt,
+    feels_like,
+    humidity,
+    pop,
+    pressure,
+    temp,
+    weather,
+    uvi,
+    visibility,
+    wind_deg,
+    wind_gust,
+    wind_speed,
+  } = hour;
+
+  let time = timeConverter(dt);
+  const { minutes, phase } = time;
+
   return (
-    <AccordionButton height={24} width={"100%"}>
-      <Box as="span" flex="1" textAlign="left">
-        9:00 PM
+    <AccordionButton height={36}>
+      <Box as="span" flex="1" textAlign="center" width={"25%"}>
+        {`${time.hour}:${minutes} ${phase}`}
       </Box>
-      <Box as="span" flex="1" textAlign="left">
-        50° F
+      <VLineBreak />
+      <Box as="span" flex="1" textAlign="center" width={"25%"}>
+        <strong>{tempConverter(temp)}° F</strong>
       </Box>
-      <Box as="span" flex="1" textAlign="left">
-        <Flex justify={"center"} align={"center"}>
+      <VLineBreak />
+      <Box as="span" flex="1" textAlign="center" width={"25%"}>
+        <Flex
+          justify={"center"}
+          align={"center"}
+          justifyContent={"space-evenly"}
+        >
           <Image
             boxSize="70px"
-            src="https://openweathermap.org/img/wn/01d@4x.png"
+            src={`https://openweathermap.org/img/wn/${hour.weather[0].icon}@4x.png`}
           />
-          Clear
+          <strong>{hour.weather[0].main}</strong>
         </Flex>
       </Box>
-      <Box as="span" flex="1" textAlign="left">
-        2%
-      </Box>
-      <Box as="span" flex="1" textAlign="left">
-        <Flex justify={"center"} align={"center"}>
-          <Image
-            boxSize="70px"
-            src="https://openweathermap.org/img/wn/10d@4x.png"
-          />
+      <VLineBreak />
+      <Box as="span" flex="1" textAlign="center" width={"25%"}>
+        <Flex
+          justify={"center"}
+          align={"center"}
+          justifyContent={"space-evenly"}
+        >
+          <WindIcon />
           NNE 5 mph
         </Flex>
       </Box>

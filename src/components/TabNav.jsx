@@ -1,3 +1,6 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
+import { useEffect, useState } from "react";
 import {
   Container,
   Tabs,
@@ -7,7 +10,9 @@ import {
   TabPanel,
 } from "@chakra-ui/react";
 
-const TabNav = () => {
+import Hourly from "./Hourly";
+
+const TabNav = ({ weatherData }) => {
   return (
     <Container maxW="960px">
       <Tabs isFitted>
@@ -25,7 +30,7 @@ const TabNav = () => {
             <p>one!</p>
           </TabPanel>
           <TabPanel>
-            <p>two!</p>
+            <Hourly hours={weatherData.hourly} />
           </TabPanel>
           <TabPanel>
             <p>three!</p>
