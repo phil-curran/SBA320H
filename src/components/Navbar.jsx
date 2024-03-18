@@ -1,6 +1,16 @@
 import { useState } from "react";
 
-import { Box, Flex, Button, InputGroup, Input } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Button,
+  InputGroup,
+  Input,
+  IconButton,
+  Spacer,
+} from "@chakra-ui/react";
+
+import { SettingsIcon } from "@chakra-ui/icons";
 
 const Navbar = () => {
   const [search, setSearch] = useState("");
@@ -22,7 +32,8 @@ const Navbar = () => {
       borderBottom="1px"
       borderColor="black"
     >
-      <Box width="960px" alignItems="center">
+      <Spacer />
+      <Box ml={12} width="960px" alignItems="center">
         <InputGroup size="md">
           <Input onChange={handleChange} placeholder="Search" />
           <Button size="md" ml={4} onClick={handleSubmit} colorScheme="green">
@@ -30,6 +41,12 @@ const Navbar = () => {
           </Button>
         </InputGroup>
       </Box>
+      <Spacer />
+      <IconButton
+        backgroundColor={"#353b48"}
+        aria-label="Search database"
+        icon={<SettingsIcon color={"#f5f6fa"} _hover={{ color: "#2f3640" }} />}
+      />
     </Flex>
   );
 };

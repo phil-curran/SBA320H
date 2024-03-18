@@ -24,7 +24,6 @@ import tempConverter from "../utilities/tempConverter";
 const Daily = ({ days }) => {
   let today = days[0];
 
-  console.log(today);
   const {
     clouds,
     dew_point,

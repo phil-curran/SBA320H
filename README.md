@@ -65,6 +65,7 @@ None at this time.
 - Pin favorite locations to toolbar with localStorage
 - Add a modal component that lets users store their api key in localStorage
 - UI improvements
+- Update Hourly section to show day / date break between days.
 - More custom icons
 
 ## License <a id="license"></a>
