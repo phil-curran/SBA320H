@@ -1,5 +1,5 @@
 export async function getWeatherData() {
-  const apiKey = "ed3a126ff6d2bf3265efc688d85505cb";
+  let apiKey = import.meta.env.VITE_API_KEY;
   const lat = "47.726381";
   const lon = "-122.243679";
   try {

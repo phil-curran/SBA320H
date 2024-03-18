@@ -12,7 +12,7 @@ import { getWeatherData } from "./utilities/getWeatherData";
 function App() {
   const [weatherData, setWeatherData] = useState(null);
   const [dataLoaded, setDataLoaded] = useState(false);
-  const [location, setLocation] = useState("New York");
+  const [location, setLocation] = useState("Seattle");
 
   useEffect(() => {
     const fetchWeatherData = async () => {
