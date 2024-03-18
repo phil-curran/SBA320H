@@ -1,6 +1,5 @@
 const timeConverter = (timeStamp) => {
   let time = new Date(timeStamp * 1000);
-
   return {
     year: time.getFullYear(),
     month: time.getMonth() + 1,

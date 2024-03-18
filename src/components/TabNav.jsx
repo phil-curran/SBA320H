@@ -11,29 +11,27 @@ import {
 } from "@chakra-ui/react";
 
 import Hourly from "./Hourly";
+import Now from "./Now";
+import Daily from "./Daily";
 
 const TabNav = ({ weatherData }) => {
   return (
     <Container maxW="960px">
       <Tabs isFitted>
         <TabList>
-          <Tab color={"#fff"}>Now</Tab>
-          <Tab>Today</Tab>
-          <Tab color={"#1abc9c"}>Hourly</Tab>
+          <Tab>Now</Tab>
+          <Tab>Hourly</Tab>
           <Tab>10 Day</Tab>
         </TabList>
         <TabPanels>
           <TabPanel>
-            <p>one!</p>
-          </TabPanel>
-          <TabPanel>
-            <p>one!</p>
+            <Now now={weatherData.current} />
           </TabPanel>
           <TabPanel>
             <Hourly hours={weatherData.hourly} />
           </TabPanel>
           <TabPanel>
-            <p>three!</p>
+            <Daily days={weatherData.daily} />
           </TabPanel>
         </TabPanels>
       </Tabs>
