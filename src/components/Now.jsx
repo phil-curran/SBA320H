@@ -45,7 +45,6 @@ const Now = ({ now }) => {
   const { date, day, hour, minutes, month, phase, seconds, year } = time;
   let sunrise = timeConverter(now.sunrise);
   let sunset = timeConverter(now.sunset);
-  console.log("now: ", now);
 
   return (
     <Container
