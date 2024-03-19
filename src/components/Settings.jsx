@@ -1,10 +1,9 @@
+import { useState } from "react";
+
 import {
   Container,
-  Grid,
-  GridItem,
   Flex,
   Center,
-  Image,
   VStack,
   Box,
   Heading,
@@ -21,6 +20,19 @@ import { CloseIcon } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
 
 const Settings = () => {
+  const [formData, setFormData] = useState("");
+  const [formValue, setFormValue] = useState(null);
+
+  const handleFormData = (e) => {
+    setFormData(e.target.value);
+    console.log("form data: ", formData);
+  };
+
+  const handleSubmit = () => {
+    localStorage.setItem("api_key", formData);
+    setFormValue(localStorage.getItem("api_key"));
+  };
+
   return (
     <>
       <Flex
@@ -58,8 +70,16 @@ const Settings = () => {
                 </Box>
                 <Box margin={2} width={"500px"} alignItems="center">
                   <InputGroup size="md">
-                    <Input placeholder="Your API Key Here!" />
-                    <Button size="md" ml={4} colorScheme="green">
+                    <Input
+                      onChange={handleFormData}
+                      placeholder={!formValue ? "Enter API Key" : formValue}
+                    />
+                    <Button
+                      onClick={handleSubmit}
+                      size="md"
+                      ml={4}
+                      colorScheme="green"
+                    >
                       Save
                     </Button>
                   </InputGroup>

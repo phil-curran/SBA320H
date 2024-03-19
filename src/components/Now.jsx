@@ -27,7 +27,7 @@ import WindIcon from "../assets/WindIcon.jsx";
 import CompassIcon from "../assets/CompassIcon.jsx";
 
 // components
-import SpinPanel from "./Spinner.jsx";
+import SpinPanel from "./SpinPanel.jsx";
 
 const Now = ({ now }) => {
   // if (!now) {
