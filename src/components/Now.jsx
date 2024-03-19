@@ -26,7 +26,14 @@ import VisibilityIcon from "../assets/VisibilityIcon.jsx";
 import WindIcon from "../assets/WindIcon.jsx";
 import CompassIcon from "../assets/CompassIcon.jsx";
 
+// components
+import SpinPanel from "./Spinner.jsx";
+
 const Now = ({ now }) => {
+  // if (!now) {
+  //   return <SpinPanel />;
+  // }
+
   const {
     clouds,
     dew_point,

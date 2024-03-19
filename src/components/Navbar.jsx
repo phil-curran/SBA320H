@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import {
   Box,
@@ -42,11 +43,15 @@ const Navbar = () => {
         </InputGroup>
       </Box>
       <Spacer />
-      <IconButton
-        backgroundColor={"#353b48"}
-        aria-label="Search database"
-        icon={<SettingsIcon color={"#f5f6fa"} _hover={{ color: "#2f3640" }} />}
-      />
+      <Link to={"/settings"}>
+        <IconButton
+          backgroundColor={"#353b48"}
+          aria-label="Search database"
+          icon={
+            <SettingsIcon color={"#f5f6fa"} _hover={{ color: "#2f3640" }} />
+          }
+        />
+      </Link>
     </Flex>
   );
 };

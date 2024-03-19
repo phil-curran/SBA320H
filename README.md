@@ -15,6 +15,7 @@ Like weather.com, but better, and without the annoying ads.
 
 - HTML / CSS / Javascript
 - React / [Vite.js](https://vitejs.dev/)
+- [React Router](https://reactrouter.com/en/main)
 - [Chakra UI](https://chakra-ui.com/)
 - [OpenWeather API](https://openweathermap.org/api/one-call-3)
 
